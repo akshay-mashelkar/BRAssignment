@@ -87,6 +87,6 @@ Given the context of a 20MB file with 1 million records, let's evaluate the opti
 - Unnecessary Complexity: Given the dataset size, the complexity and overhead of using PySpark are not justified.
 - Manual Validation: Similar to Pandas without GE, you'll need to manually code all validations, which could be complex.
 
-**Conclusion:** Most Optimal Approach
+## Conclusion on Most Optimal Approach
 Python/Pandas with Great Expectations (GE) Library is the most optimal approach for a 20MB file with 1 million records.
 
