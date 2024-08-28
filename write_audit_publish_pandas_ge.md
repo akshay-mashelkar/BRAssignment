@@ -11,7 +11,7 @@ The `load_and_preprocess_data` function loads the data using Pandas and performs
 import pandas as pd
 
 # Paths for data and outputs
-input_file_path = "employee_data.csv"
+input_file_path = "employee.csv"
 intermediate_file_path = "intermediate_data.csv"
 
 def load_and_preprocess_data(input_file):
