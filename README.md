@@ -45,12 +45,12 @@
 
 ## Approach Evaluation 
 
-Given the context of a 20MB file with 1 million records, let's evaluate the optimal approach:
+Given the UseCase of a ~60MB input file with 1 million records, below is the evaluation summary:
 
 **1. Python/Pandas with Great Expectations (GE) Library**
 
 **Pros**
-- Memory Efficiency: Pandas can handle the 20MB file efficiently within the memory of most modern systems.
+- Memory Efficiency: Pandas can handle the 60MB file efficiently within the memory of most modern systems on a standalone server.
 - Ease of Use: Python/Pandas with GE provides a straightforward and user-friendly approach, with a rich set of built-in validations and easy customization.
 - Integration: Great Expectations integrates well with Pandas, making it easy to set up and maintain.
 
@@ -64,7 +64,7 @@ Given the context of a 20MB file with 1 million records, let's evaluate the opti
 - Parallel Processing: It can distribute the workload across multiple cores or nodes, potentially reducing execution time on very large datasets.
 
 **Cons:**
-- Overhead: For a 20MB file, the overhead of setting up and managing a Spark cluster is unnecessary and could slow down processing.
+- Overhead: For a 60MB file, the overhead of setting up and managing a Spark cluster is unnecessary and could slow down processing.
 - Complexity: More complex to set up and maintain compared to Pandas.
 
 **3. Python/Pandas without GE Library**
@@ -88,5 +88,5 @@ Given the context of a 20MB file with 1 million records, let's evaluate the opti
 - Manual Validation: Similar to Pandas without GE, you'll need to manually code all validations, which could be complex.
 
 ## Conclusion on Most Optimal Approach
-Python/Pandas with Great Expectations (GE) Library is the most optimal approach for a 20MB file with 1 million records.
+Python/Pandas with Great Expectations (GE) Library is the most optimal approach for a given input file with 1 million records.
 
