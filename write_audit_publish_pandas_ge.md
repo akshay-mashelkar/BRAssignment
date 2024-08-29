@@ -1,7 +1,7 @@
 
 # Write-Audit-Publish Pattern with Python/Pandas and Great Expectations
 
-This document outlines a "Write-Audit-Publish" pattern for data quality management using Python, Pandas, and the Great Expectations (GE) library. The approach ensures that data is validated before being published, adhering to robust data quality management practices.
+Approach outlines a "Write-Audit-Publish" pattern for data quality management using Python, Pandas, and the Great Expectations (GE) library. The approach ensures that data is validated before being published, adhering to robust data quality management practices.
 
 ## **1. Write: Load and Preprocess Data**
 
