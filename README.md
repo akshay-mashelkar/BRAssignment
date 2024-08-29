@@ -87,6 +87,33 @@ Given the UseCase of a ~60MB input file with 1 million records, below is the eva
 - Unnecessary Complexity: Given the dataset size, the complexity and overhead of using PySpark are not justified.
 - Manual Validation: Similar to Pandas without GE, you'll need to manually code all validations, which could be complex.
 
+
+## Challenges Faced
+1. **Performance and Scalability:**
+
+- Pandas with Great Expectations: While Pandas is efficient for smaller datasets, handling 1 million records with extensive validation checks can strain memory and processing time. Great Expectations adds additional overhead as it involves converting Pandas DataFrames into Great Expectations DataFrames, which could lead to slower processing.
+- PySpark Considerations: PySpark is designed for distributed data processing, making it a better fit for large datasets. However, setting up PySpark and integrating it with Great Expectations can be complex and may require additional infrastructure (e.g., a Spark cluster).
+
+2. **Complexity of Integration:**
+
+- Great Expectations: Integrating Great Expectations into the data pipeline introduces complexity, especially when writing custom rules. This could require more time for development and testing. Additionally, integrating Great Expectations with PySpark can be less straightforward than with Pandas due to differences in how the two frameworks handle data.
+- Without Great Expectations: Writing custom validation logic directly in Pandas or PySpark reduces dependency on external libraries but increases the amount of code to maintain. Custom logic may also lack the built-in documentation, reporting, and reusability features that Great Expectations offers.
+
+3. **Ease of Development and Maintenance:**
+
+- Pandas: Working with Pandas is generally easier for data engineers and analysts due to its simpler API and extensive documentation. It allows for rapid prototyping and debugging. However, handling complex validation rules manually without Great Expectations could lead to repetitive and error-prone code.
+- Great Expectations: Provides a structured and reusable way to define and apply data validation rules. It also automatically generates detailed reports, which can be useful for auditing and compliance purposes. However, there is a learning curve, especially for those unfamiliar with the library.
+
+4. **Flexibility and Customization:**
+
+- Great Expectations: Offers extensive flexibility with both built-in and custom expectations, making it easier to scale validation logic across different datasets and projects. However, creating complex custom rules might require deep knowledge of the library’s internals.
+- Custom Pandas/PySpark Solutions: While custom solutions provide maximum flexibility, they require more effort to implement and maintain. Each new validation rule might need to be written from scratch, which could slow down development.
+
+
 ## Conclusion on Most Optimal Approach
 Python/Pandas with Great Expectations (GE) Library is the most optimal approach for a given input file with 1 million records.
+- Sufficient performance for the dataset size.
+- Ease of use and a simpler setup compared to PySpark.
+- Comprehensive validation capabilities with minimal custom code.
+- Built-in reporting and auditing, which is valuable for data quality assurance.
 
