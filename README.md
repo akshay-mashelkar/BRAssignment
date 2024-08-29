@@ -111,7 +111,7 @@ Given the UseCase of a ~60MB input file with 1 million records, below is the eva
 
 
 ## Conclusion on Most Optimal Approach
-Python/Pandas with Great Expectations (GE) Library is the most optimal approach for a given input file with 1 million records.
+**Python/Pandas with Great Expectations (GE) Library** is the most optimal approach for a given input file with 1 million records.
 - Sufficient performance for the dataset size.
 - Ease of use and a simpler setup compared to PySpark.
 - Comprehensive validation capabilities with minimal custom code.
