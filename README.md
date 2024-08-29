@@ -7,10 +7,10 @@
 - Confirm that the STATE column includes only 'Maharashtra', 'Haryana', or 'Karnataka'.
 - Perform Not Null/blank checks on all columns.
 - Evaluate and determine the best solution/technique in terms of time complexity from the following options:
-- PySpark with Great Expectations Library using standard and custom GE rules.
-- Python/Pandas with Great Expectations Library using standard and custom GE rules.
-- PySpark without GE library.
-- Python/Pandas without GE library.
+    - PySpark with Great Expectations Library using standard and custom GE rules.
+    - Python/Pandas with Great Expectations Library using standard and custom GE rules.
+    - PySpark without GE library.
+    - Python/Pandas without GE library.
 - The output of the QC alert should be in JSON format as follows:
 
  
