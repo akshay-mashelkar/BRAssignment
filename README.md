@@ -109,6 +109,36 @@ Given the UseCase of a ~60MB input file with 1 million records, below is the eva
 - Great Expectations: Offers extensive flexibility with both built-in and custom expectations, making it easier to scale validation logic across different datasets and projects. However, creating complex custom rules might require deep knowledge of the library’s internals.
 - Custom Pandas/PySpark Solutions: While custom solutions provide maximum flexibility, they require more effort to implement and maintain. Each new validation rule might need to be written from scratch, which could slow down development.
 
+## Time Complexity Analysis
+
+**1. Pandas with Great Expectations**
+- Data Loading: O(n)
+- Data Validation:
+      Standard expectations: O(n) per check.
+      Custom expectations: O(n) per check.
+- Overall Complexity: **O(m * n)**
+- For 1 million records, Pandas can still handle the processing, but given size might push the limits of memory efficiency, particularly if multiple validation checks are applied. The overhead from Great Expectations will add some time complexity, but it’s still manageable.
+
+**2. PySpark with Great Expectations**
+- Data Loading: O(n/p)
+- Data Validation:
+      Standard and custom checks: O(n/p) per check.
+- Overall Complexity: **O((m * n) / p)**
+- PySpark’s distributed nature means it can efficiently process even larger datasets by splitting the workload across partitions. The overhead from Great Expectations is offset by the parallelism, making this a strong contender for larger data volumes. Given the size of data it is not a suitable choice.
+
+**3. Pandas without Great Expectations**
+- Data Loading: O(n)
+- Data Validation:
+      Custom validation logic: O(n) per check.
+- Overall Complexity: **O(m * n)**
+- This approach removes the overhead from Great Expectations, potentially making it slightly faster than using GE. 
+
+**4. PySpark without Great Expectations**
+- Data Loading: O(n/p)
+- Data Validation:
+      Custom validation logic: O(n/p) per check.
+- Overall Complexity: **O((m * n) / p)**
+- Without the overhead of Great Expectations, PySpark is optimized purely for speed, leveraging distributed processing to handle the dataset efficiently. This is likely the fastest option in terms of time complexity. for larger datasets with GBs of Data
 
 ## Conclusion on Most Optimal Approach
 **Python/Pandas with Great Expectations (GE) Library** is the most optimal approach for a given input file with 1 million records.
